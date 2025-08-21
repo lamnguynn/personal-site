@@ -6,4 +6,7 @@ import banTagsPlugin from './vite-plugin-ban-tags';
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss(), banTagsPlugin()],
+  server: {
+    port: 3001,
+  }
 })
