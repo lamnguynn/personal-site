@@ -6,5 +6,5 @@
 }
 
 body {
-    @apply text-white;
+    @apply dark:text-white;
 }
