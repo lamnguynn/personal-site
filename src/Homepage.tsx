@@ -1,21 +1,30 @@
 import InteriorColorSelector from "./components/InteriorColorSelector/InteriorColorSelector"
+import { BACKGROUND_COLOR_CLASSES, DEFAULT_BG_COLOR } from "./constants/InteriorColorConstants";
 import { InteriorColorProvider } from './context/InteriorColorContext';
 import { useInteriorColor } from "./hooks/useInteriorColor";
 
+function HomepageProviders({ children }: { children: React.ReactNode }) {
+    return (
+        <InteriorColorProvider>
+            { children }
+        </InteriorColorProvider>
+    )
+}
 
 function Homepage() {
   return (
-    <InteriorColorProvider>
-        <HomepageContext />
-    </InteriorColorProvider>
+    <HomepageProviders>
+      <HomepageContent />
+    </HomepageProviders>
   )
 }
 
-function HomepageContext() {
+function HomepageContent() {
     const { interiorColor } = useInteriorColor();
-    
+    const backgroundColor = BACKGROUND_COLOR_CLASSES[interiorColor.toLowerCase()] || DEFAULT_BG_COLOR
+
     return (
-        <div className={`bg-interior-${interiorColor.toLowerCase()} h-screen`}>
+        <div className={`${backgroundColor} h-screen`}>
             <InteriorColorSelector />
         </div>
     )

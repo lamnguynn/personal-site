@@ -1,8 +1,7 @@
 export enum InteriorOptions {
     TARTUFO = "Tartufo",
-    SILVERSTONE = "Silverstone",
-    IVORY = "Ivory"
+    IVORY = "Ivory",
+    FJORD = "Fjord"
 }
 
-export type InteriorKey = keyof typeof InteriorOptions;
 export type Interior = `${InteriorOptions}`;

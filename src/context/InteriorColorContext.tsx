@@ -1,7 +1,7 @@
 import type React from "react";
 import { createContext, useState } from "react";
-import { InteriorOptions, type Interior } from "../types/InteriorColorType";
-
+import type { Interior } from "../types/InteriorColorType";
+import { DEFAULT_INTERIOR_COLOR } from "../constants/InteriorColorConstants";
 
 export const InteriorColorContext = createContext<
   | { interiorColor: Interior; setInteriorColor: (color: Interior) => void; }
@@ -9,7 +9,7 @@ export const InteriorColorContext = createContext<
   >(undefined);
 
 export function InteriorColorProvider({ children }: { children: React.ReactNode }){
-    const [interiorColor, setInteriorColor] = useState<Interior>(InteriorOptions.TARTUFO);
+    const [interiorColor, setInteriorColor] = useState<Interior>(DEFAULT_INTERIOR_COLOR);
 
     return (
         <InteriorColorContext.Provider value={{ interiorColor, setInteriorColor }}>
