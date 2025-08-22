@@ -1,7 +1,7 @@
-import InteriorColorSelector from "./components/InteriorColorSelector/InteriorColorSelector"
-import { BACKGROUND_COLOR_CLASSES, DEFAULT_BG_COLOR } from "./constants/InteriorColorConstants";
-import { InteriorColorProvider } from './context/InteriorColorContext';
-import { useInteriorColor } from "./hooks/useInteriorColor";
+import InteriorColorSelector from "@/components/InteriorColorSelector/InteriorColorSelector"
+import { BACKGROUND_COLOR_CLASSES, DEFAULT_BG_COLOR } from "@/constants/InteriorColorConstants";
+import { InteriorColorProvider } from '@/context/InteriorColorContext';
+import { useInteriorColor } from "@/hooks/useInteriorColor";
 
 function HomepageProviders({ children }: { children: React.ReactNode }) {
     return (

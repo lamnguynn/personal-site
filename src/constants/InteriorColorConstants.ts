@@ -1,4 +1,4 @@
-import { InteriorOptions, type Interior } from "../types/InteriorColorType";
+import { InteriorOptions, type Interior } from "@/types/InteriorColorType";
 
 export const BACKGROUND_COLOR_CLASSES: Record<string, string> = Object.values(InteriorOptions).reduce(
     (acc, color) => {

@@ -1,7 +1,7 @@
 import type React from "react";
 import { createContext, useState } from "react";
-import type { Interior } from "../types/InteriorColorType";
-import { DEFAULT_INTERIOR_COLOR } from "../constants/InteriorColorConstants";
+import type { Interior } from "@/types/InteriorColorType";
+import { DEFAULT_INTERIOR_COLOR } from "@/constants/InteriorColorConstants";
 
 export const InteriorColorContext = createContext<
   | { interiorColor: Interior; setInteriorColor: (color: Interior) => void; }

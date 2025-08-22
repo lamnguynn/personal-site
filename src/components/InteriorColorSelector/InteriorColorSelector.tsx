@@ -1,5 +1,5 @@
-import { useInteriorColor } from "../../hooks/useInteriorColor";
-import { InteriorOptions, type Interior } from "../../types/InteriorColorType";
+import { useInteriorColor } from "@/hooks/useInteriorColor";
+import { InteriorOptions, type Interior } from "@/types/InteriorColorType";
 
 
 export default function InteriorColorSelector() {

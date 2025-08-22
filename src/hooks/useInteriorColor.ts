@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import { InteriorColorContext } from "../context/InteriorColorContext"
+import { InteriorColorContext } from "@/context/InteriorColorContext"
 
 export const useInteriorColor = () => {
     const context = useContext(InteriorColorContext)
