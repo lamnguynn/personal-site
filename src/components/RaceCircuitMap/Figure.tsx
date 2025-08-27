@@ -1,5 +1,5 @@
 import { useLoader } from '@react-three/fiber'
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 import * as THREE from "three";
 import { SVGLoader } from "three/examples/jsm/Addons.js";
 
@@ -9,17 +9,18 @@ import Car from './Car';
 import WorkBuilding from './WorkBuilding';
 import ObservationDeck from './ObservationDeck';
 import FanSeating from './FanSeating';
+import type { Vector3 } from '@/types/RaceCircuitType';
 
 interface Props {
     svgPath?: string // relative to the ROOT of the project
 }
 
 export default function Figure({ svgPath = "./src/assets/racetrack.svg" }: Props) {
-    const pointsData: { label: string, coordinate: [x: number, y: number, z: number]}[] =
+    const pointsData: { label: string, coordinate: Vector3}[] =
         [
             {
-                label: "Work",
-                coordinate: [133, 20.2, Z_COORDINATE], // Work
+                label: "Career",
+                coordinate: [190, -21, Z_COORDINATE], // Career
             },
                 {
                 label: "Projects",
@@ -27,12 +28,16 @@ export default function Figure({ svgPath = "./src/assets/racetrack.svg" }: Props
             },
             {
                 label: "Me",
-                coordinate: [-194, -100, Z_COORDINATE], // Me
+                coordinate: [-150, -120, Z_COORDINATE], // Me
             }
         ];
 
+    const [isCarAtTarget, setIsCarAtTarget] = useState(false);
+    const [animateRowIndex, setAnimateRowIndex] = useState<number | undefined>(undefined);
+    const [carTarget, setCarTarget] = useState<{label: string | undefined, coordinate: Vector3 | undefined}>({ label: undefined, coordinate: undefined })
     const svgData = useMemo(() => useLoader(SVGLoader, svgPath), [svgPath]);
     const shapes = svgData.paths.flatMap((path) => path.toShapes(true));
+
     const geometry = useMemo(() => {
         const geo = new THREE.ExtrudeGeometry(shapes, {
             depth: 5,
@@ -60,17 +65,36 @@ export default function Figure({ svgPath = "./src/assets/racetrack.svg" }: Props
         return new THREE.EdgesGeometry(geometry); // Extract edges from geometry
     }, [geometry]);
 
+    const handlePointClick = (label: string, coordinate: Vector3) => {
+        setCarTarget({
+            label,
+            coordinate
+        });
+        setIsCarAtTarget(false);
+    }
+
+    const handleCarStop = () => {
+        const index = pointsData.findIndex((point) => point.label === carTarget.label)
+        setAnimateRowIndex(index + 1);
+    }
+
+    const handleXClickToClose = () => {
+        setCarTarget({ label: undefined, coordinate: undefined});
+        setIsCarAtTarget(false);
+        setAnimateRowIndex(undefined);
+    }
+
     return(
         <>
             <lineSegments geometry={edgesGeometry} scale={[1, 1, 1]}>
                 <lineBasicMaterial color={COLORS.TRACK} />
             </lineSegments>
 
-            <Points pointsData={pointsData} />
-            <Car pathCurve={pathCurve} />
+            <Points pointsData={pointsData} onPointClick={handlePointClick} />
+            <Car pathCurve={pathCurve} targetPosition={carTarget.coordinate} onStopTarget={handleCarStop} isCarAtTarget={isCarAtTarget}  setIsCarAtTarget={setIsCarAtTarget}/>
             <WorkBuilding/>
             <ObservationDeck/>
-            <FanSeating/>
+            <FanSeating animateRowIndex={animateRowIndex} onXClick={handleXClickToClose}/>
         </>
     )
 }
