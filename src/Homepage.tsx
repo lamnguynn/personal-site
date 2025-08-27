@@ -1,15 +1,10 @@
-import GearSelector from "@/components/GearSelector/GearSelector"
+import RaceTrack from "@/components/RaceCircuitMap/Canvas";
 
-function Homepage() {
-  const handleShiftComplete = (gear: number) => {
-    console.log(`Shifted to gear: ${gear}`);
-  };
+export default function Homepage() {
 
-  return (
-    <div className="h-screen w-screen">
-      <GearSelector onShiftComplete={handleShiftComplete}/>
-    </div>
-  )
+    return (
+        <div className="flex h-screen w-screen">
+            <RaceTrack/>
+        </div>
+    )
 }
-
-export default Homepage
