@@ -1,6 +1,8 @@
 import type { ContentType } from "@/types/RaceCircuitType";
 import { Link } from "lucide-react";
 
+import bebasFont from '@/assets/fonts/Bebas_Neue_Regular.json?url';
+
 export const Z_COORDINATE = 0.0;
 export const OBJECT_SCALE = 0.08;
 
@@ -20,7 +22,7 @@ export const COLORS = {
     "SEATING_TEXT": "#00FF80"
 };
 
-export const FONT_PATH = "./src/assets/fonts/Bebas Neue_Regular.json";
+export const FONT_PATH = bebasFont;
 
 export const Card = ({ title, link = undefined, description, timeframeStrings }: { title: string, link?: string, description: string, timeframeStrings?: string[] }) => {
     return (
