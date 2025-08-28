@@ -10,12 +10,13 @@ import WorkBuilding from './WorkBuilding';
 import ObservationDeck from './ObservationDeck';
 import FanSeating from './FanSeating';
 import type { Vector3 } from '@/types/RaceCircuitType';
+import racetrack from '@/assets/racetrack.svg';
 
 interface Props {
     svgPath?: string // relative to the ROOT of the project
 }
 
-export default function Figure({ svgPath = "./src/assets/racetrack.svg" }: Props) {
+export default function Figure({ svgPath = racetrack }: Props) {
     const pointsData: { label: string, coordinate: Vector3}[] =
         [
             {

@@ -11,6 +11,10 @@ export default defineConfig({
   server: {
     port: 3001,
   },
+  build: {
+    assetsInlineLimit: 0,
+  },
+  assetsInclude: ['**/*.svg'],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, 'src'),
