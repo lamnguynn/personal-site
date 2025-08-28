@@ -6,7 +6,7 @@ import path from 'path';
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: "/react-rep/",
+  base: "./react-prep/",
   plugins: [react(), tailwindcss(), banTagsPlugin()],
   server: {
     port: 3001,
