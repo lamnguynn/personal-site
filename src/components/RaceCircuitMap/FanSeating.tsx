@@ -1,6 +1,6 @@
 import { COLORS, FONT_PATH, meData, projectsData, workData } from "@/constants/RaceCircuitConstants";
 import { convertToRadians } from "@/util/util";
-import { useLoader, useThree } from "@react-three/fiber";
+import { useLoader } from "@react-three/fiber";
 import Text from "./Text";
 import { animated, useSpring } from "@react-spring/three";
 import { Html } from "@react-three/drei";
