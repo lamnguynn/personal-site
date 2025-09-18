@@ -49,7 +49,7 @@ export const workData: ContentType = {
     "Resume":
         <div className="flex flex-col gap-2 px-4 py-2">
             <p className="font-bebas-neue text-2xl flex-wrap">Resume</p>
-            <p>Download <span className="text-blue-600 text-xl">here!</span></p>
+            <p>Download <a href="/lam_nguyen_resume.pdf" target="_blank"><span className="text-blue-600 text-xl">here!</span></a></p>
         </div>
 }
 
