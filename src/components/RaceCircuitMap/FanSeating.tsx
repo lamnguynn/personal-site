@@ -27,8 +27,6 @@ export default function FanSeating({ animateRowIndex, onXClick }: Props) {
     const zAngle = 18; // in degrees
     let dynamicHeight = rowHeight;
     const pullOutDistance = 75;
-    const { size, viewport } = useThree();
-    const scale = size.width / viewport.width;
     const font = useLoader(FontLoader, FONT_PATH);
 
     const [sectionTitle, setSectionTitle] = useState<string | undefined>(undefined);
@@ -100,7 +98,7 @@ export default function FanSeating({ animateRowIndex, onXClick }: Props) {
                                 animateRowIndex !== undefined && index === animateRowIndex && 
                                 <> 
                                     <Tires data={getContent(index).keys} onTireClick={handleTireClick} onXClick={handleXClick}/>
-                                    <Html className="sticky-note flex justify-start items-start bg-amber-200 p-2 sm:p-3 md:p-4 mt-2 ml-3" style={{ width: `${rowWidth * scale * 1}px`, height: "auto" }}>
+                                    <Html className="sticky-note flex justify-start items-start bg-amber-200 p-2 sm:p-3 md:p-4 mt-2 ml-3" style={{ width: `${rowWidth * 4}px`, height: "auto", top: "10rem"}} center>
                                         <Content sectionTitle={sectionTitle} data={getContent(index).data}/>
                                     </Html>
                                     <Text text={`(of) ${index === 1 ? "Career" : index === 2 ? "Projects" : "Me"}`} font={font} size={7} width={-30} length={5} height={2} color={index % 2 === 1 ? "slategrey" : COLORS.BUILDING_TEXT} rotation={[0, 0, 0]}/>
