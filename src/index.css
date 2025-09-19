@@ -1,23 +1,23 @@
 @font-face {
-    font-family: bebas;
-    src: url('./assets/fonts/BebasNeue-Regular.ttf');
+  font-family: bebas;
+  src: url('./assets/fonts/BebasNeue-Regular.ttf');
 }
 
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @theme {
-    /* Exterior colors */
-    --color-irish-green: #40C575;
-    --color-british-racing-green: #004225;
+  /* Exterior colors */
+  --color-irish-green: #40c575;
+  --color-british-racing-green: #004225;
 
-    /* Interior colors */
-    /* Note: Need to update '@source inline' below when adding new colors */
-    --color-tartufo: #b77b5f;
-    --color-ivory: #e3e3e5;
-    --color-fjord: #88a8cf;
+  /* Interior colors */
+  /* Note: Need to update '@source inline' below when adding new colors */
+  --color-tartufo: #b77b5f;
+  --color-ivory: #e3e3e5;
+  --color-fjord: #88a8cf;
 
-    /* Fonts */
-    --font-bebas-neue: bebas, "sans-serif";
+  /* Fonts */
+  --font-bebas-neue: bebas, 'sans-serif';
 }
 
 /* Safe-list for interior colors */
