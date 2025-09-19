@@ -21,7 +21,7 @@ jobs:
           node-version: 24
       - name: Install dependencies
         run: |
-            npm i
+            npm ci
       - name: Run the 'build' command
         run: |
             npm run build
