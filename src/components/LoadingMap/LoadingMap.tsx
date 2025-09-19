@@ -10,7 +10,7 @@ export default function LoadingMap() {
   }, []);
 
   const initializeMap = () => {
-    scopeRef.current = createScope({ root: rootRef }).add((_) => {
+    scopeRef.current = createScope({ root: rootRef }).add(() => {
       if (rootRef.current) {
         animate(svg.createDrawable('path'), {
           draw: '0 1',
