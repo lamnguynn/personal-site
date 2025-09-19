@@ -1,5 +1,5 @@
 import { useLoader } from '@react-three/fiber'
-import { useMemo, useState } from 'react';
+import { useContext, useMemo } from 'react';
 import * as THREE from "three";
 import { SVGLoader } from "three/examples/jsm/Addons.js";
 
@@ -11,6 +11,8 @@ import ObservationDeck from './ObservationDeck';
 import FanSeating from './FanSeating';
 import type { Vector3 } from '@/types/RaceCircuitType';
 import racetrack from '@/assets/racetrack.svg';
+import { HomeContext } from '@/context/HomeContext';
+import { getContent } from '@/util/util';
 
 interface Props {
     svgPath?: string // relative to the ROOT of the project
@@ -33,11 +35,11 @@ export default function Figure({ svgPath = racetrack }: Props) {
             }
         ];
 
-    const [isCarAtTarget, setIsCarAtTarget] = useState(false);
-    const [animateRowIndex, setAnimateRowIndex] = useState<number | undefined>(undefined);
-    const [carTarget, setCarTarget] = useState<{label: string | undefined, coordinate: Vector3 | undefined}>({ label: undefined, coordinate: undefined })
+    const context = useContext(HomeContext);
     const svgData = useMemo(() => useLoader(SVGLoader, svgPath), [svgPath]);
     const shapes = svgData.paths.flatMap((path) => path.toShapes(true));
+    
+    const { carTarget, setIsCarAtTarget, setAnimateRowIndex, setCarTarget, setSectionTitle } = context!;
 
     const geometry = useMemo(() => {
         const geo = new THREE.ExtrudeGeometry(shapes, {
@@ -71,18 +73,18 @@ export default function Figure({ svgPath = racetrack }: Props) {
             label,
             coordinate
         });
+        
         setIsCarAtTarget(false);
-    }
-
-    const handleCarStop = () => {
-        const index = pointsData.findIndex((point) => point.label === carTarget.label)
+        const index = pointsData.findIndex((point) => point.label === label);
         setAnimateRowIndex(index + 1);
+        setSectionTitle(Object.keys(getContent(index + 1).data)[0])
     }
 
     const handleXClickToClose = () => {
-        setCarTarget({ label: undefined, coordinate: undefined});
-        setIsCarAtTarget(false);
+        setCarTarget({ label: undefined, coordinate: undefined });
         setAnimateRowIndex(undefined);
+        
+        setIsCarAtTarget(false);
     }
 
     return(
@@ -92,10 +94,10 @@ export default function Figure({ svgPath = racetrack }: Props) {
             </lineSegments>
 
             <Points pointsData={pointsData} onPointClick={handlePointClick} />
-            <Car pathCurve={pathCurve} targetPosition={carTarget.coordinate} onStopTarget={handleCarStop} isCarAtTarget={isCarAtTarget}  setIsCarAtTarget={setIsCarAtTarget}/>
+            <Car pathCurve={pathCurve} targetPosition={carTarget.coordinate}/>
             <WorkBuilding/>
             <ObservationDeck/>
-            <FanSeating animateRowIndex={animateRowIndex} onXClick={handleXClickToClose}/>
+            <FanSeating onXClick={handleXClickToClose}/>
         </>
     )
 }
