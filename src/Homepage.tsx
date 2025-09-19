@@ -11,7 +11,7 @@ export default function Homepage() {
           message={
             'Still in development! Apologies for any device responsive issues!'
           }
-          url="https://github.com/lamnguynn/personal-site/issues"
+          url="https://github.com/users/lamnguynn/projects/2/views/1"
           urlText={
             <>
               Roadmap{' '}
