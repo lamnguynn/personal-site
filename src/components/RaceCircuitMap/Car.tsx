@@ -1,22 +1,23 @@
 import { COLORS } from "@/constants/RaceCircuitConstants";
+import { HomeContext } from "@/context/HomeContext";
 import { getDistanceVector3 } from "@/util/util";
 import { useFrame } from "@react-three/fiber";
-import { useRef, type Dispatch, type SetStateAction } from "react";
+import { useContext, useRef } from "react";
 import type { CatmullRomCurve3, Mesh } from "three";
 
 interface Props {
     pathCurve: CatmullRomCurve3;
     targetPosition?: [number, number, number];
-    onStopTarget?: () => void;
-    isCarAtTarget: boolean;
-    setIsCarAtTarget: Dispatch<SetStateAction<boolean>>;
 }
 
-export default function Car({ pathCurve, targetPosition, onStopTarget, isCarAtTarget, setIsCarAtTarget}: Props) {
+export default function Car({ pathCurve, targetPosition}: Props) {
     const carRef = useRef<Mesh | null>(null);
     const timeRef = useRef(0); 
     const speed = 500;
 
+    const context = useContext(HomeContext);
+    const { isCarAtTarget, setIsCarAtTarget } = context!;
+    
     const moveFreely = (car: Mesh, t: number) => {
         const point = pathCurve.getPointAt(t);
         // Stop at the target if it exists AND call callback to slide out row
@@ -24,7 +25,6 @@ export default function Car({ pathCurve, targetPosition, onStopTarget, isCarAtTa
             if(getDistanceVector3(targetPosition, point) < 3) {
                 setIsCarAtTarget(true);
             }
-            if(onStopTarget) onStopTarget();
         }
 
         // Move freely if there is no target

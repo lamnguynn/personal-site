@@ -11,10 +11,10 @@ interface Props {
 }
 
 export default function Tires({ data, onTireClick, onXClick }: Props) {
-    const arcSpread = convertToRadians(80);
-    const radius = -12;
-    const xDisplacement = 70; // Shift the buttons left (positive)
-    const yDisplacement = -10; // Shift the buttons down (positive)
+    const arcSpread = convertToRadians(50);
+    const radius = -25;
+    const xDisplacement = 50; // Shift the buttons left (positive)
+    const yDisplacement = 10; // Shift the buttons down (positive)
     const shapeDepth = 2;
     const [currentIndex, setCurrentIndex] = useState<number | undefined>(undefined);
 

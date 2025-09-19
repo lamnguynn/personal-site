@@ -16,11 +16,11 @@ export default function Content({ sectionTitle, data }: Props) {
         }
 
         return data[key];
-    }, [sectionTitle])
+    }, [sectionTitle]);
 
     return (
-        <div className="bg-amber-300 w-full h-full">
-            {  content }
+        <div className="bg-amber-300 w-full h-full text-sm">
+            { content }
         </div>
     )
 }

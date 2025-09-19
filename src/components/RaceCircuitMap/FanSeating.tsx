@@ -1,22 +1,20 @@
-import { COLORS, FONT_PATH, meData, projectsData, workData } from "@/constants/RaceCircuitConstants";
-import { convertToRadians } from "@/util/util";
+import { COLORS, FONT_PATH } from "@/constants/RaceCircuitConstants";
+import { convertToRadians, getContent } from "@/util/util";
 import { useLoader } from "@react-three/fiber";
 import Text from "./Text";
 import { animated, useSpring } from "@react-spring/three";
-import { Html } from "@react-three/drei";
 
 import Tires from "./Tires";
 import type { Rotation3, Vector3 } from "@/types/RaceCircuitType";
-import { useState } from "react";
-import Content from "../Content/Content";
+import { useContext } from "react";
 import { FontLoader } from "three/examples/jsm/Addons.js";
+import { HomeContext } from "@/context/HomeContext";
 
 interface Props {
-    animateRowIndex?: number | undefined
     onXClick?: () => void
 }
 
-export default function FanSeating({ animateRowIndex, onXClick }: Props) {
+export default function FanSeating({ onXClick }: Props) {
     const numRows = 5; // Must be an odd number
     const heightIncrement = 3;
     const depthIncrement = 5;
@@ -29,24 +27,8 @@ export default function FanSeating({ animateRowIndex, onXClick }: Props) {
     const pullOutDistance = 75;
     const font = useLoader(FontLoader, FONT_PATH);
 
-    const [sectionTitle, setSectionTitle] = useState<string | undefined>(undefined);
-
-    /**
-     * Extract both key and values from a certain dataset given an index.
-     * 
-     * @param index 
-     * @returns 
-     */
-    const getContent = (index: number) => {
-        return {
-            data: index === 1 ? workData : 
-                index === 2 ? projectsData :
-                index === 3 ? meData : {},
-            keys: index === 1 ?  Object.keys(workData) : 
-                index === 2 ?  Object.keys(projectsData) :
-                index === 3 ?  Object.keys(meData) : []
-        }
-    }
+    const context = useContext(HomeContext);
+    const { animateRowIndex, setSectionTitle } = context!;
 
     const handleTireClick = (title: string) => {
         setSectionTitle(title);
@@ -63,9 +45,9 @@ export default function FanSeating({ animateRowIndex, onXClick }: Props) {
                 {Array.from({ length: numRows }).map((_, index) => {
                     const rowPositionY = index * heightIncrement;
                     const rowPositionZ = index * depthIncrement;
-                    const position: Vector3 = [0, rowPositionY, -rowPositionZ]
-                    const rotation: Rotation3 = [0, 0, 0]
-                    const config = { friction: 30, tension: 60 }
+                    const position: Vector3 = [0, rowPositionY, -rowPositionZ];
+                    const rotation: Rotation3 = [0, 0, 0];
+                    const config = { friction: 30, tension: 60 };
 
                     if(index > 0) {
                         dynamicHeight += (heightIncrement * 2)
@@ -95,12 +77,10 @@ export default function FanSeating({ animateRowIndex, onXClick }: Props) {
                             />
                             {
                                 /* Create the tire buttons to show content + the actual HTML content + title of the button clicked */
-                                animateRowIndex !== undefined && index === animateRowIndex && 
+                                animateRowIndex !== undefined && isAnimatedRow && 
                                 <> 
+
                                     <Tires data={getContent(index).keys} onTireClick={handleTireClick} onXClick={handleXClick}/>
-                                    <Html className="sticky-note flex justify-start items-start bg-amber-200 p-2 sm:p-3 md:p-4 mt-2 ml-3" style={{ width: `${rowWidth * 4}px`, height: "auto", top: "10rem"}} center>
-                                        <Content sectionTitle={sectionTitle} data={getContent(index).data}/>
-                                    </Html>
                                     <Text text={`(of) ${index === 1 ? "Career" : index === 2 ? "Projects" : "Me"}`} font={font} size={7} width={-30} length={5} height={2} color={index % 2 === 1 ? "slategrey" : COLORS.BUILDING_TEXT} rotation={[0, 0, 0]}/>
                                 </>
                             }
