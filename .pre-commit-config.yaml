@@ -1,0 +1,19 @@
+repos:
+  - repo: local
+    hooks:
+      - id: lint-commit
+        name: Check for linting using ESLint
+        entry: scripts/run-lint.sh
+        stages: [ pre-commit ]
+        language: system
+
+      - id: format-commit
+        name: Check for formatting using Prettier
+        entry: scripts/run-format.sh
+        stages: [ pre-commit ]
+        language: system
+
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.28.0
+    hooks:
+      - id: gitleaks
