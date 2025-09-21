@@ -4,7 +4,7 @@ import * as THREE from 'three';
 import { SVGLoader } from 'three/examples/jsm/Addons.js';
 
 import Points from './Points';
-import { COLORS, Z_COORDINATE } from '@/constants/RaceCircuitConstants';
+import { COLORS, LABEL_Z_COORDINATE } from '@/constants/RaceCircuitConstants';
 import Car from './Car';
 import WorkBuilding from './WorkBuilding';
 import ObservationDeck from './ObservationDeck';
@@ -22,15 +22,15 @@ export default function Figure({ svgPath = racetrack }: Props) {
   const pointsData: { label: string; coordinate: Vector3 }[] = [
     {
       label: 'Career',
-      coordinate: [190, -21, Z_COORDINATE], // Career
+      coordinate: [190, -21, LABEL_Z_COORDINATE], // Career
     },
     {
       label: 'Projects',
-      coordinate: [-149, 75, Z_COORDINATE], // Projects
+      coordinate: [-149, 75, LABEL_Z_COORDINATE], // Projects
     },
     {
       label: 'Me',
-      coordinate: [-150, -120, Z_COORDINATE], // Me
+      coordinate: [-150, -120, LABEL_Z_COORDINATE], // Me
     },
   ];
 
