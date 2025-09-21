@@ -4,7 +4,7 @@ const BASE_URL = 'http://localhost:3001';
 export default defineConfig({
   testDir: './src',
   fullyParallel: true,
-  outputDir: './test-results',
+  outputDir: './test-results/',
   reporter: [['html', { outputFolder: './playwright-report' }]],
   use: {
     baseURL: BASE_URL,
