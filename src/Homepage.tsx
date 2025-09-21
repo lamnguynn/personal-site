@@ -9,16 +9,19 @@ export default function Homepage() {
       <div className="flex h-screen w-screen">
         <Banner
           message={
-            'Still in development! Apologies for any device responsive issues!'
-          }
-          url="https://github.com/users/lamnguynn/projects/2/views/1"
-          urlText={
-            <>
+            <p className="text-white">
+              Still in development! Apologies for any device responsive issues!
               Roadmap{' '}
               <span className="underline underline-offset-4 decoration-blue-600 decoration-2">
-                here!
+                <a
+                  href={'https://github.com/users/lamnguynn/projects/2/views/1'}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  here!
+                </a>
               </span>
-            </>
+            </p>
           }
         />
         <Modal />
