@@ -9,7 +9,7 @@
     "preview": "vite preview",
     "prettier-fix": "prettier ./src --write",
     "prettier-check": "prettier ./src --check",
-    "eslint-check": "eslint ./src --config eslint.config.ts",
+    "eslint-check": "eslint ./src --config eslint.config.ts && npm run prettier-fix",
     "eslint-fix": "npm run eslint-check -- --fix"
   },
   "dependencies": {
@@ -31,6 +31,7 @@
     "@types/react-dom": "^19.1.7",
     "@vitejs/plugin-react": "^5.0.0",
     "eslint": "^9.36.0",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
     "globals": "^16.4.0",
     "prettier": "^3.6.2",
     "typescript": "~5.8.3",

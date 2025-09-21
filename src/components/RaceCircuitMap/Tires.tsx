@@ -1,8 +1,8 @@
 import { animated, useSpring } from '@react-spring/three';
-
-import { convertToRadians } from '@/util/util';
 import { useState } from 'react';
+
 import type { Rotation3 } from '@/types/RaceCircuitType';
+import { convertToRadians } from '@/util/util';
 
 interface Props {
   data: string[];

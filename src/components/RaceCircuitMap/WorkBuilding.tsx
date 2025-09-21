@@ -1,8 +1,10 @@
+import { useLoader } from '@react-three/fiber';
+import { FontLoader } from 'three/examples/jsm/Addons.js';
+
 import { COLORS, FONT_PATH } from '@/constants/RaceCircuitConstants';
 import { convertToRadians } from '@/util/util';
+
 import Text from './Text';
-import { FontLoader } from 'three/examples/jsm/Addons.js';
-import { useLoader } from '@react-three/fiber';
 
 export default function WorkBuilding() {
   const fontSize = 12;

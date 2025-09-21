@@ -1,7 +1,8 @@
+import { useContext } from 'react';
+
+import Content from '@/components/Content/Content';
 import { HomeContext } from '@/context/HomeContext';
 import { getContent } from '@/util/util';
-import { useContext } from 'react';
-import Content from '@/components/Content/Content';
 
 export default function Modal({}) {
   const context = useContext(HomeContext);

@@ -1,5 +1,6 @@
+import { type ReactNode, useMemo } from 'react';
+
 import type { ContentType } from '@/types/RaceCircuitType';
-import { useMemo, type ReactNode } from 'react';
 
 interface Props {
   sectionTitle: string | undefined;

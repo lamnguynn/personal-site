@@ -1,4 +1,5 @@
 import { OrbitControls } from '@react-three/drei';
+
 import Figure from './Figure';
 
 export default function Scene() {

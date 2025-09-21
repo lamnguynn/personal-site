@@ -3,16 +3,17 @@ import { useContext, useMemo } from 'react';
 import * as THREE from 'three';
 import { SVGLoader } from 'three/examples/jsm/Addons.js';
 
-import Points from './Points';
-import { COLORS, LABEL_Z_COORDINATE } from '@/constants/RaceCircuitConstants';
-import Car from './Car';
-import WorkBuilding from './WorkBuilding';
-import ObservationDeck from './ObservationDeck';
-import FanSeating from './FanSeating';
-import type { Vector3 } from '@/types/RaceCircuitType';
 import racetrack from '@/assets/racetrack.svg';
+import { COLORS, LABEL_Z_COORDINATE } from '@/constants/RaceCircuitConstants';
 import { HomeContext } from '@/context/HomeContext';
+import type { Vector3 } from '@/types/RaceCircuitType';
 import { getContent } from '@/util/util';
+
+import Car from './Car';
+import FanSeating from './FanSeating';
+import ObservationDeck from './ObservationDeck';
+import Points from './Points';
+import WorkBuilding from './WorkBuilding';
 
 interface Props {
   svgPath?: string; // relative to the ROOT of the project

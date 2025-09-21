@@ -1,14 +1,15 @@
-import { COLORS, FONT_PATH } from '@/constants/RaceCircuitConstants';
-import { convertToRadians, getContent } from '@/util/util';
-import { useLoader } from '@react-three/fiber';
-import Text from './Text';
 import { animated, useSpring } from '@react-spring/three';
-
-import Tires from './Tires';
-import type { Rotation3, Vector3 } from '@/types/RaceCircuitType';
+import { useLoader } from '@react-three/fiber';
 import { useContext } from 'react';
 import { FontLoader } from 'three/examples/jsm/Addons.js';
+
+import { COLORS, FONT_PATH } from '@/constants/RaceCircuitConstants';
 import { HomeContext } from '@/context/HomeContext';
+import type { Rotation3, Vector3 } from '@/types/RaceCircuitType';
+import { convertToRadians, getContent } from '@/util/util';
+
+import Text from './Text';
+import Tires from './Tires';
 
 interface Props {
   onXClick?: () => void;

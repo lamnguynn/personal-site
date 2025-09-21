@@ -1,10 +1,11 @@
-import {
-  workData,
-  projectsData,
-  meData,
-} from '@/constants/RaceCircuitConstants';
-import * as THREE from 'three';
 import type { Vector3 } from 'three';
+import * as THREE from 'three';
+
+import {
+  meData,
+  projectsData,
+  workData,
+} from '@/constants/RaceCircuitConstants';
 
 export const convertToRadians = (degrees: number) => degrees * (Math.PI / 180);
 

@@ -1,8 +1,10 @@
 import { Canvas, useThree } from '@react-three/fiber';
-import Scene from './Scene';
 import { useEffect } from 'react';
 import * as THREE from 'three';
+
 import { BASE_FOV } from '@/constants/RaceCircuitConstants';
+
+import Scene from './Scene';
 
 const CAMERA_POSITION: [x: number, y: number, z: number] = [0, -225, 200];
 
