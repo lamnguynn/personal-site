@@ -1,34 +1,20 @@
-import { Canvas, useThree } from '@react-three/fiber';
-import { useEffect } from 'react';
-import * as THREE from 'three';
+import { Canvas } from '@react-three/fiber';
+import { useContext } from 'react';
 
-import { BASE_FOV } from '@/constants/RaceCircuitConstants';
+import { HomeContext } from '@/context/HomeContext';
 
+import ResponsiveCamera from './ResponsiveCamera';
 import Scene from './Scene';
 
-const CAMERA_POSITION: [x: number, y: number, z: number] = [0, -225, 200];
-
-function ResponsiveCamera() {
-  const { camera, size } = useThree();
-
-  useEffect(() => {
-    const perspectiveCamera = camera as THREE.PerspectiveCamera;
-    perspectiveCamera.fov = Math.max(
-      BASE_FOV,
-      -0.05 * window.innerWidth + 151.75,
-    ); // y = mx + b
-    perspectiveCamera.updateProjectionMatrix();
-  }, [size, camera]);
-
-  return null;
-}
-
 export default function RaceTrack() {
+  const context = useContext(HomeContext);
+  const { cameraPosition } = context!;
+
   return (
     <div className="flex w-screen justify-center items-center">
       <div className="w-full h-full relative">
-        <Canvas camera={{ position: CAMERA_POSITION, fov: BASE_FOV }}>
-          <ResponsiveCamera />
+        <Canvas>
+          <ResponsiveCamera position={cameraPosition} />
           <Scene />
         </Canvas>
       </div>
