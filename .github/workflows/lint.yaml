@@ -3,7 +3,7 @@ name: Lint project
 on:
     push:
       branches:
-        - "**"
+        - "main"
     pull_request:
 
 permissions:
