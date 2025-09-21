@@ -1,9 +1,10 @@
-import type { ContentType } from '@/types/RaceCircuitType';
 import { Link } from 'lucide-react';
 
 import bebasFont from '@/assets/fonts/Bebas_Neue_Regular.json?url';
+import type { ContentType } from '@/types/RaceCircuitType';
 
-export const Z_COORDINATE = 0.0;
+export const BASE_FOV = 75;
+export const LABEL_Z_COORDINATE = 0.0;
 export const OBJECT_SCALE = 0.08;
 
 export const COLORS = {

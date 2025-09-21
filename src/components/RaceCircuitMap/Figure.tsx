@@ -3,16 +3,17 @@ import { useContext, useMemo } from 'react';
 import * as THREE from 'three';
 import { SVGLoader } from 'three/examples/jsm/Addons.js';
 
-import Points from './Points';
-import { COLORS, Z_COORDINATE } from '@/constants/RaceCircuitConstants';
-import Car from './Car';
-import WorkBuilding from './WorkBuilding';
-import ObservationDeck from './ObservationDeck';
-import FanSeating from './FanSeating';
-import type { Vector3 } from '@/types/RaceCircuitType';
 import racetrack from '@/assets/racetrack.svg';
+import { COLORS, LABEL_Z_COORDINATE } from '@/constants/RaceCircuitConstants';
 import { HomeContext } from '@/context/HomeContext';
+import type { Vector3 } from '@/types/RaceCircuitType';
 import { getContent } from '@/util/util';
+
+import Car from './Car';
+import FanSeating from './FanSeating';
+import ObservationDeck from './ObservationDeck';
+import Points from './Points';
+import WorkBuilding from './WorkBuilding';
 
 interface Props {
   svgPath?: string; // relative to the ROOT of the project
@@ -22,15 +23,15 @@ export default function Figure({ svgPath = racetrack }: Props) {
   const pointsData: { label: string; coordinate: Vector3 }[] = [
     {
       label: 'Career',
-      coordinate: [190, -21, Z_COORDINATE], // Career
+      coordinate: [190, -21, LABEL_Z_COORDINATE], // Career
     },
     {
       label: 'Projects',
-      coordinate: [-149, 75, Z_COORDINATE], // Projects
+      coordinate: [-149, 75, LABEL_Z_COORDINATE], // Projects
     },
     {
       label: 'Me',
-      coordinate: [-150, -120, Z_COORDINATE], // Me
+      coordinate: [-150, -120, LABEL_Z_COORDINATE], // Me
     },
   ];
 

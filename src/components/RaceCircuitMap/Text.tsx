@@ -1,5 +1,6 @@
-import type { Vector3 } from '@/types/RaceCircuitType';
 import { type Font, TextGeometry } from 'three/examples/jsm/Addons.js';
+
+import type { Vector3 } from '@/types/RaceCircuitType';
 
 interface Props {
   text: string;

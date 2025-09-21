@@ -1,5 +1,5 @@
+import { animate, createScope, type Scope, svg } from 'animejs';
 import { useEffect, useRef } from 'react';
-import { animate, createScope, svg, type Scope } from 'animejs';
 
 export default function LoadingMap() {
   const rootRef = useRef(null);

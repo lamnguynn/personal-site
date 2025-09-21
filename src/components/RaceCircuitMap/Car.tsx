@@ -1,9 +1,10 @@
-import { COLORS } from '@/constants/RaceCircuitConstants';
-import { HomeContext } from '@/context/HomeContext';
-import { getDistanceVector3 } from '@/util/util';
 import { useFrame } from '@react-three/fiber';
 import { useContext, useRef } from 'react';
 import type { CatmullRomCurve3, Mesh } from 'three';
+
+import { COLORS } from '@/constants/RaceCircuitConstants';
+import { HomeContext } from '@/context/HomeContext';
+import { getDistanceVector3 } from '@/util/util';
 
 interface Props {
   pathCurve: CatmullRomCurve3;

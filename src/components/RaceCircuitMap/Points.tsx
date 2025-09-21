@@ -1,6 +1,7 @@
+import { Html } from '@react-three/drei';
+
 import { COLORS } from '@/constants/RaceCircuitConstants';
 import type { Vector3 } from '@/types/RaceCircuitType';
-import { Html } from '@react-three/drei';
 
 interface Props {
   pointsData: {
