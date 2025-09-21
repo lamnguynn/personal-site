@@ -11,7 +11,7 @@
     "prettier-check": "prettier ./src --check",
     "eslint-check": "eslint ./src --config eslint.config.ts && npm run prettier-fix",
     "eslint-fix": "npm run eslint-check -- --fix",
-    "test": "npx playwright test"
+    "test-e2e": "npx playwright test"
   },
   "dependencies": {
     "@react-spring/three": "^10.0.1",
