@@ -6,6 +6,10 @@ import type { ContentType } from '@/types/RaceCircuitType';
 export const BASE_FOV = 75;
 export const LABEL_Z_COORDINATE = 0.0;
 export const OBJECT_SCALE = 0.08;
+export const DEFAULT_CAMERA_POSITION: [x: number, y: number, z: number] = [
+  0, -225, 200,
+];
+export const LERP_SPEED = 0.005; // Smaller = slower, bigger = faster. Pick between 0 and 1.
 
 export const COLORS = {
   BUILDING: 'red',

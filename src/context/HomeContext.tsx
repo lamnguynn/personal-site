@@ -5,6 +5,7 @@ import {
   useState,
 } from 'react';
 
+import { DEFAULT_CAMERA_POSITION } from '@/constants/RaceCircuitConstants';
 import type { Vector3 } from '@/types/RaceCircuitType';
 
 type IsCarAtTarget = boolean;
@@ -25,6 +26,8 @@ export const HomeContext = createContext<
       setAnimateRowIndex: Dispatch<SetStateAction<Index>>;
       carTarget: CarTarget;
       setCarTarget: Dispatch<SetStateAction<CarTarget>>;
+      cameraPosition: Vector3;
+      setCameraPosition: Dispatch<SetStateAction<Vector3>>;
     }
   | undefined
 >(undefined);
@@ -37,6 +40,7 @@ export function HomeProvider({ children }: { children: React.ReactNode }) {
     label: undefined,
     coordinate: undefined,
   });
+  const [cameraPosition, setCameraPosition] = useState(DEFAULT_CAMERA_POSITION);
 
   return (
     <HomeContext.Provider
@@ -49,6 +53,8 @@ export function HomeProvider({ children }: { children: React.ReactNode }) {
         setAnimateRowIndex,
         carTarget,
         setCarTarget,
+        cameraPosition,
+        setCameraPosition,
       }}
     >
       {children}
