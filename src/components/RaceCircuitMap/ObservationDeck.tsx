@@ -2,7 +2,7 @@ import { Euler, Vector3 as ThreeVector3 } from 'three';
 
 import { COLORS } from '@/constants/RaceCircuitConstants';
 import type { Vector3 } from '@/types/RaceCircuitType';
-import { convertToRadians } from '@/util/util';
+import { convertToRadians } from '@/util';
 
 export default function ObservationDeck() {
   // Tower name - "The cocktail"

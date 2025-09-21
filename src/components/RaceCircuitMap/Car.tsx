@@ -4,7 +4,7 @@ import type { CatmullRomCurve3, Mesh } from 'three';
 
 import { COLORS } from '@/constants/RaceCircuitConstants';
 import { HomeContext } from '@/context/HomeContext';
-import { getDistanceVector3 } from '@/util/util';
+import { getDistanceVector3 } from '@/util';
 
 interface Props {
   pathCurve: CatmullRomCurve3;

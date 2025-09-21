@@ -2,7 +2,7 @@ import { useLoader } from '@react-three/fiber';
 import { FontLoader } from 'three/examples/jsm/Addons.js';
 
 import { COLORS, FONT_PATH } from '@/constants/RaceCircuitConstants';
-import { convertToRadians } from '@/util/util';
+import { convertToRadians } from '@/util';
 
 import Text from './Text';
 

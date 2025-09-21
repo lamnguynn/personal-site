@@ -7,7 +7,7 @@ import racetrack from '@/assets/racetrack.svg';
 import { COLORS, LABEL_Z_COORDINATE } from '@/constants/RaceCircuitConstants';
 import { HomeContext } from '@/context/HomeContext';
 import type { Vector3 } from '@/types/RaceCircuitType';
-import { getContent } from '@/util/util';
+import { getContent } from '@/util';
 
 import Car from './Car';
 import FanSeating from './FanSeating';
