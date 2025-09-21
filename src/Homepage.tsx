@@ -1,8 +1,7 @@
-import Banner from '@/components/Banner/Banner';
-import Modal from '@/components/Modal/Modal';
-import RaceTrack from '@/components/RaceCircuitMap/Canvas';
-
-import { HomeProvider } from './context/HomeContext';
+import Banner from '@/components/Banner/';
+import Modal from '@/components/Modal/';
+import { RaceTrack } from '@/components/RaceCircuitMap';
+import { HomeProvider } from '@/context/HomeContext';
 
 export default function Homepage() {
   return (

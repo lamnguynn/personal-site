@@ -6,7 +6,7 @@ import { FontLoader } from 'three/examples/jsm/Addons.js';
 import { COLORS, FONT_PATH } from '@/constants/RaceCircuitConstants';
 import { HomeContext } from '@/context/HomeContext';
 import type { Rotation3, Vector3 } from '@/types/RaceCircuitType';
-import { convertToRadians, getContent } from '@/util/util';
+import { convertToRadians, getContent } from '@/util';
 
 import Text from './Text';
 import Tires from './Tires';
