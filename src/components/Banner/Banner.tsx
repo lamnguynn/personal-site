@@ -1,20 +1,13 @@
 import type { ReactNode } from 'react';
 
 interface Props {
-  message: string;
-  url?: string;
-  urlText?: ReactNode;
+  message: ReactNode;
 }
 
-export default function Banner({ message, url, urlText }: Props) {
+export default function Banner({ message }: Props) {
   return (
     <div className="w-full h-fit p-2 bg-red-400 absolute flex justify-center items-center z-[100000000]">
-      <p className="text-white">
-        {message}{' '}
-        <a href={url} target="_blank" rel="noreferrer">
-          {urlText}
-        </a>
-      </p>
+      {message}
     </div>
   );
 }
