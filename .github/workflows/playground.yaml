@@ -13,3 +13,4 @@ jobs:
               run: |
                 echo "${{ github.event.number }}"
                 echo "${{ github.event.pull_request.number }}"
+                echo "${{ github.event.workflow_run.head_branch }}"
