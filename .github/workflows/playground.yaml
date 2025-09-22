@@ -1,0 +1,15 @@
+name: Playground for testing things in GH action
+on:
+    push:
+        branches:
+            - main
+            - "**"
+
+jobs:
+    head_commit_message:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Get PR number being merged
+              run: |
+                echo "${{ github.event.number }}"
+                echo "${{ github.event.pull_request.number }}"
