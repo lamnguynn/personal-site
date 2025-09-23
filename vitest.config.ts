@@ -23,7 +23,7 @@ export default defineConfig({
         extends: true,
         test: {
           name: 'ui',
-          include: ['**/*.ui.test.ts'],
+          include: ['**/*.ui.test.tsx'],
         },
       },
     ],
