@@ -1,4 +1,4 @@
-name: Run tests on project
+name: Run e2e tests on project
 
 on:
     push:
