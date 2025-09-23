@@ -11,7 +11,7 @@
     "prettier-check": "prettier ./src --check",
     "eslint-check": "eslint ./src --config eslint.config.ts && npm run prettier-fix",
     "eslint-fix": "npm run eslint-check -- --fix",
-    "test-e2e": "npx playwright test",
+    "test-e2e": "cd e2e-tests && npx playwright test",
     "test-unit": "npx vitest run --project unit",
     "test-ui": "npx vitest run --project ui",
     "test-vite": "npx vitest"
