@@ -5,12 +5,27 @@ export default defineConfig({
   test: {
     environment: 'jsdom',
     globals: true,
-    include: ['**/*.test.?(c|m)[t]s?(x)'],
     exclude: [
       '**/node_modules/**',
       '**/dist/**',
       '**/.{git}/**',
       '**/e2e-test/**',
+    ],
+    projects: [
+      {
+        extends: true,
+        test: {
+          name: 'unit',
+          include: ['**/*.unit.test.ts'],
+        },
+      },
+      {
+        extends: true,
+        test: {
+          name: 'ui',
+          include: ['**/*.ui.test.ts'],
+        },
+      },
     ],
   },
   resolve: {
