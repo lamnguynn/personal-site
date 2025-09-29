@@ -11,8 +11,8 @@ export default function Modal({}) {
   return (
     <>
       {animateRowIndex !== undefined && (
-        <div className="absolute bottom-0 left-[10%] right-[10%] md:left-[20%] md:right-[20%] lg:left-[30%] lg:right-[30%] h-auto bg-amber-200 z-[100000000] p-4 pb-0">
-          <div className="relative bg-amber-300 w-full h-full overflow-scroll">
+        <div className="absolute right-[10%] bottom-0 left-[10%] z-[100000000] h-auto bg-amber-200 p-4 pb-0 md:right-[20%] md:left-[20%] lg:right-[30%] lg:left-[30%]">
+          <div className="relative h-full w-full overflow-scroll bg-amber-300">
             <Content
               sectionTitle={sectionTitle}
               data={getContent(animateRowIndex).data}

@@ -6,7 +6,7 @@ interface Props {
 
 export default function Banner({ message }: Props) {
   return (
-    <div className="w-full h-fit p-2 bg-red-400 absolute flex justify-center items-center z-[100000000]">
+    <div className="absolute z-[100000000] flex h-fit w-full items-center justify-center bg-red-400 p-2">
       {message}
     </div>
   );
