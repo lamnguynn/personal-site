@@ -28,7 +28,7 @@ export default function LoadingMap() {
   };
 
   return (
-    <div className="w-1/3 h-1/3" ref={rootRef}>
+    <div className="h-1/3 w-1/3" ref={rootRef}>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="88 75.5 493.6 271.7">
         <path
           d="M200 300c200 100 0-50 250 0 100 0 150-50 100-100S450 300 400 250q0 0-150-50-50 0-50-100-50-50-100 100Z"

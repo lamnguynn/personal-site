@@ -11,8 +11,8 @@ export default function RaceTrack() {
   const { cameraPosition } = context!;
 
   return (
-    <div className="flex w-screen justify-center items-center">
-      <div className="w-full h-full relative">
+    <div className="flex w-screen items-center justify-center">
+      <div className="relative h-full w-full">
         <Canvas>
           <ResponsiveCamera position={cameraPosition} />
           <Scene />

@@ -43,7 +43,7 @@ export const Card = ({
   return (
     <div className="flex flex-col gap-2 px-4 py-2">
       <div className="flex flex-row justify-between gap-0.5">
-        <h1 className="font-bebas-neue text-2xl flex-wrap">{title}</h1>
+        <h1 className="font-bebas-neue flex-wrap text-2xl">{title}</h1>
         {link && (
           <a target="_blank" rel="noreferrer" href={link}>
             <Link />
@@ -82,11 +82,11 @@ export const workData: ContentType = {
   ),
   Resume: (
     <div className="flex flex-col gap-2 px-4 py-2">
-      <p className="font-bebas-neue text-2xl flex-wrap">Resume</p>
+      <p className="font-bebas-neue flex-wrap text-2xl">Resume</p>
       <p>
         Download{' '}
         <a href="lam_nguyen_resume.pdf" target="_blank">
-          <span className="text-blue-600 text-xl">here!</span>
+          <span className="text-xl text-blue-600">here!</span>
         </a>
       </p>
     </div>
