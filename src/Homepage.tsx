@@ -10,8 +10,7 @@ export default function Homepage() {
         <Banner
           message={
             <p className="text-white">
-              Still in development! Apologies for any device responsive issues!
-              Roadmap{' '}
+              Still in development! Roadmap{' '}
               <span className="underline decoration-blue-600 decoration-2 underline-offset-4">
                 <a
                   href={'https://github.com/users/lamnguynn/projects/2/views/1'}
