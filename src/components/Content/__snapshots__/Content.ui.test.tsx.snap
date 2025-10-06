@@ -3,7 +3,7 @@
 exports[`Content component > snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="h-full w-full bg-amber-300 text-sm"
+    class="h-full min-h-[6rem] w-full bg-amber-300 text-sm"
   />
 </DocumentFragment>
 `;

@@ -19,5 +19,9 @@ export default function Content({ sectionTitle, data }: Props) {
     return data[key];
   }, [sectionTitle]);
 
-  return <div className="h-full w-full bg-amber-300 text-sm">{content}</div>;
+  return (
+    <div className="h-full min-h-[6rem] w-full bg-amber-300 text-sm">
+      {content}
+    </div>
+  );
 }
