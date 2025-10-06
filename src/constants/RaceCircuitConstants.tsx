@@ -86,7 +86,7 @@ export const workData: ContentType = {
       <p>
         Download{' '}
         <a href="lam_nguyen_resume.pdf" target="_blank">
-          <span className="text-xl text-blue-600">here!</span>
+          <span className="text-blue-600">here!</span>
         </a>
       </p>
     </div>
