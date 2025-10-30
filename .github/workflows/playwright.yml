@@ -26,7 +26,7 @@ jobs:
       - name: Run tests
         id: run-tests
         run: |
-            npm run test-e2e
+            xvfb-run --auto-servernum -- npm run test-e2e
       - uses: actions/upload-artifact@6f51ac03b9356f520e9adb1b1b7802705f340c2b # v4.5.0
         if: ${{ !cancelled() && failure() && steps.run-tests.conclusion == 'failure' }}
         with:

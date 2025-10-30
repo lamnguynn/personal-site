@@ -30,6 +30,7 @@ export default function Points({ pointsData, onPointClick }: Props) {
             <p
               onClick={() => handlePointClick(point.label, point.coordinate)}
               className="font-bebas-neue mt-2 ml-3 cursor-pointer text-xl text-zinc-500 sm:text-2xl md:text-3xl"
+              data-testid="track-point"
             >
               {point.label}
             </p>
