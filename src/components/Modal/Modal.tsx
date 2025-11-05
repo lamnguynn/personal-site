@@ -11,7 +11,10 @@ export default function Modal({}) {
   return (
     <>
       {animateRowIndex !== undefined && (
-        <div className="absolute right-[10%] bottom-0 left-[10%] z-[100000000] h-auto min-h-[8rem] bg-amber-200 p-4 md:right-[20%] md:left-[20%] lg:right-[30%] lg:left-[30%]">
+        <div
+          className="absolute right-[10%] bottom-0 left-[10%] z-[100000000] h-auto min-h-[8rem] bg-amber-200 p-4 md:right-[20%] md:left-[20%] lg:right-[30%] lg:left-[30%]"
+          data-testid="content-modal"
+        >
           <Content
             sectionTitle={sectionTitle}
             data={getContent(animateRowIndex).data}
