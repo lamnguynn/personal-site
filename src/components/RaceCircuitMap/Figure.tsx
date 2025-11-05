@@ -1,4 +1,5 @@
 import { useLoader } from '@react-three/fiber';
+import { Briefcase, TestTubes, User } from 'lucide-react';
 import { useContext, useMemo } from 'react';
 import * as THREE from 'three';
 import { SVGLoader } from 'three/examples/jsm/Addons.js';
@@ -6,7 +7,7 @@ import { SVGLoader } from 'three/examples/jsm/Addons.js';
 import racetrack from '@/assets/racetrack.svg';
 import { COLORS, LABEL_Z_COORDINATE } from '@/constants/RaceCircuitConstants';
 import { HomeContext } from '@/context/HomeContext';
-import type { Vector3 } from '@/types/RaceCircuitType';
+import type { PointDataType, Vector3 } from '@/types/RaceCircuitType';
 import { getContent } from '@/util';
 
 import Car from './Car';
@@ -20,18 +21,22 @@ interface Props {
 }
 
 export default function Figure({ svgPath = racetrack }: Props) {
-  const pointsData: { label: string; coordinate: Vector3 }[] = [
+  const iconSize: number = 32;
+  const pointsData: PointDataType = [
     {
       label: 'Career',
       coordinate: [190, -21, LABEL_Z_COORDINATE], // Career
+      icon: <Briefcase size={iconSize} fill="orange" strokeWidth={0.5} />,
     },
     {
       label: 'Projects',
       coordinate: [-149, 75, LABEL_Z_COORDINATE], // Projects
+      icon: <TestTubes size={iconSize} fill="#5c9738" strokeWidth={0.5} />,
     },
     {
       label: 'Me',
       coordinate: [-150, -120, LABEL_Z_COORDINATE], // Me
+      icon: <User size={iconSize} fill="black" strokeWidth={0.5} />,
     },
   ];
 
