@@ -1,5 +1,5 @@
 import { useLoader } from '@react-three/fiber';
-import { Briefcase, TestTubes, User } from 'lucide-react';
+import { Briefcase, Hammer, User } from 'lucide-react';
 import { useContext, useMemo } from 'react';
 import * as THREE from 'three';
 import { SVGLoader } from 'three/examples/jsm/Addons.js';
@@ -26,17 +26,17 @@ export default function Figure({ svgPath = racetrack }: Props) {
     {
       label: 'Career',
       coordinate: [190, -21, LABEL_Z_COORDINATE], // Career
-      icon: <Briefcase size={iconSize} fill="orange" strokeWidth={0.5} />,
+      icon: <Briefcase size={iconSize} fill="orange" strokeWidth={0} />,
     },
     {
       label: 'Projects',
       coordinate: [-149, 75, LABEL_Z_COORDINATE], // Projects
-      icon: <TestTubes size={iconSize} fill="#5c9738" strokeWidth={0.5} />,
+      icon: <Hammer size={iconSize} fill="#5c9738" strokeWidth={0} />,
     },
     {
       label: 'Me',
       coordinate: [-150, -120, LABEL_Z_COORDINATE], // Me
-      icon: <User size={iconSize} fill="black" strokeWidth={0.5} />,
+      icon: <User size={iconSize} fill="black" strokeWidth={0} />,
     },
   ];
 
