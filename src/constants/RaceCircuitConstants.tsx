@@ -68,7 +68,7 @@ export const workData: ContentType = {
     <Card
       title="NGINX"
       link="https://www.f5.com/go/product/welcome-to-nginx"
-      description="Working as a front-end engineer within the NGINX DocOps and NGINX One team to deliver awesome features for our AI chatbot and new documentation site."
+      description="Working as a front-end engineer within the NGINX DocOps, NGINX One, and F5 XC team to deliver awesome features for our AI chatbot and new documentation site."
       timeframeStrings={['09/2023 - Present']}
     />
   ),
@@ -76,7 +76,7 @@ export const workData: ContentType = {
     <Card
       title="BMW Group"
       link="https://www.bmwgroup.com/en.html"
-      description="Worked as a full-stack intern within the Digital Life Innovation team to deliver exciting apps to our in-vehicle experience."
+      description="Worked as a full-stack intern within the Digital Life Innovation team to deliver exciting new R&D ideas to our in-vehicle experience."
       timeframeStrings={['01/2022 - 06/2022', '06/2023-09/2023']}
     />
   ),
